@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "372366097199",
+    "project_id": "isgarbage-a1725",
+    "storage_bucket": "isgarbage-a1725.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:372366097199:android:420ee5136fe6160c5bbfda",
+        "android_client_info": {
+          "package_name": "com.example.testmasp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "372366097199-oha6f5q30si76jpmpeu3u6b5b88biubb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA6Iq-hHZokMoHUD2YlNqoMDefrF70lChw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "372366097199-oha6f5q30si76jpmpeu3u6b5b88biubb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
