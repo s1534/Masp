@@ -20,9 +20,6 @@ class _SettingPageState extends State<SettingPage> {
 
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Login"),
-      ),
       body: Center(
         child: Container(
           padding: EdgeInsets.all(24),
@@ -31,7 +28,30 @@ class _SettingPageState extends State<SettingPage> {
             children: <Widget>[
               // メールアドレス入力
               TextFormField(
-                decoration: InputDecoration(labelText: 'メールアドレス'),
+                decoration: InputDecoration(
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(16),
+                    borderSide: const BorderSide(
+                      color: Colors.green,
+                      width: 2.0,
+                    ),
+                  ),
+                  labelStyle: TextStyle(
+                    fontSize: 12,
+                    color: Colors.green[300],
+                  ),
+                  labelText: 'Emailアドレス',
+                  prefixIcon:
+                      Icon(IconData(0xf018, fontFamily: 'MaterialIcons')),
+                  floatingLabelStyle: const TextStyle(fontSize: 12),
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(16),
+                    borderSide: BorderSide(
+                      color: Colors.green[100]!,
+                      width: 1.0,
+                    ),
+                  ),
+                ),
                 onChanged: (String value) {
                   setState(() {
                     email = value;
@@ -39,14 +59,40 @@ class _SettingPageState extends State<SettingPage> {
                 },
               ),
               // パスワード入力
-              TextFormField(
-                decoration: InputDecoration(labelText: 'パスワード'),
-                obscureText: true,
-                onChanged: (String value) {
-                  setState(() {
-                    password = value;
-                  });
-                },
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: TextFormField(
+                  decoration: InputDecoration(
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(16),
+                      borderSide: const BorderSide(
+                        color: Colors.green,
+                        width: 2.0,
+                      ),
+                    ),
+                    labelStyle: TextStyle(
+                      fontSize: 12,
+                      color: Colors.green[300],
+                    ),
+                    labelText: 'パスワード',
+                    prefixIcon:
+                        Icon(IconData(0xf052b, fontFamily: 'MaterialIcons')),
+                    floatingLabelStyle: const TextStyle(fontSize: 12),
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(16),
+                      borderSide: BorderSide(
+                        color: Colors.green[100]!,
+                        width: 1.0,
+                      ),
+                    ),
+                  ),
+                  obscureText: true,
+                  onChanged: (String value) {
+                    setState(() {
+                      password = value;
+                    });
+                  },
+                ),
               ),
               Container(
                 padding: EdgeInsets.all(8),
