@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import "set_destination.dart";
+import "vote.dart";
 
 class Main_manue extends StatefulWidget {
   const Main_manue({Key? key}) : super(key: key);
@@ -24,7 +25,12 @@ class _Main_manueState extends State<Main_manue> {
                 width: 400,
                 // height: 50,
                 child: ElevatedButton(
-                  onPressed: () => {Navigator.pop(context)},
+                  onPressed: () => {
+                    Navigator.of(context)
+                        .push(MaterialPageRoute(builder: (context) {
+                      return Vote();
+                    }))
+                  },
                   child: Text(
                     '投票しましょう',
                     style: TextStyle(color: Colors.white, fontSize: 20),
