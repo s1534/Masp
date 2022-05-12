@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:testmasp/init.dart';
 import 'package:testmasp/mainmune.dart';
+import 'package:flutter/cupertino.dart';
 
 class SettingPage extends StatefulWidget {
   const SettingPage({Key? key}) : super(key: key);
@@ -22,8 +23,13 @@ class _SettingPageState extends State<SettingPage> {
     return Scaffold(
       body: Center(
         child: Padding(
-          padding: const EdgeInsets.fromLTRB(0, 100, 0, 0),
+          padding: const EdgeInsets.fromLTRB(0, 200, 0, 0),
           child: Column(children: [
+            Container(
+              width: 150,
+              height: 150,
+              child: (Image.asset('assets/images/masp.png')),
+            ),
             Text("MEMBER LOGIN",
                 style: TextStyle(fontSize: 36, fontWeight: FontWeight.bold)),
             Center(
@@ -108,7 +114,7 @@ class _SettingPageState extends State<SettingPage> {
                       //width: double.infinity,
                       // ログイン登録ボタン
                       child: ElevatedButton(
-                        child: const Text('Button'),
+                        child: const Text('LOGIN'),
                         style: ElevatedButton.styleFrom(
                           primary: Colors.blue,
                           onPrimary: Colors.black,
@@ -132,14 +138,13 @@ class _SettingPageState extends State<SettingPage> {
                           } catch (e) {
                             // ログインに失敗した場合
                             setState(() {
-                              infoText = "ログインに失敗しました：${e.toString()}";
                               showDialog(
                                 context: context,
-                                barrierDismissible: false,
+                                barrierDismissible: true,
                                 builder: (_) {
-                                  return AlertDialog(
-                                    title: Text("This is the title"),
-                                    content: Text("This is the content"),
+                                  return CupertinoAlertDialog(
+                                    title: Text("ログイン失敗"),
+                                    content: Text("${e.toString()}"),
                                     actions: [
                                       FlatButton(
                                         child: Text("OK"),
