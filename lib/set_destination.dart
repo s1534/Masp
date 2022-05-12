@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 import 'package:flutter/cupertino.dart';
+import 'destination.dart';
 import 'init.dart';
 
 class Set_destination extends StatefulWidget {
@@ -37,7 +38,7 @@ class _Set_destinationState extends State<Set_destination> {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => MyApp()),
+                  MaterialPageRoute(builder: (context) => Result()),
                 );
               },
               child: const Text(
