@@ -13,7 +13,6 @@ class _Main_manueState extends State<Main_manue> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(backgroundColor: Colors.cyan),
       body: Container(
         // color: Colors.blueGrey.shade400,
         padding: EdgeInsets.all(100),

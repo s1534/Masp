@@ -82,7 +82,7 @@
 		</data>
 		<key>Assets.car</key>
 		<data>
-		9r9CBymb6NEdcxjLf+F+K/X4Kv0=
+		7wwfwwSp1GLecnCd5PMV9sXDTOg=
 		</data>
 		<key>Base.lproj/LaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib</key>
 		<data>
@@ -110,7 +110,7 @@
 		</data>
 		<key>Frameworks/App.framework/App</key>
 		<data>
-		3ElQKnLh6v1blMDg0dQl0R7VOVA=
+		c4IS3TPB14GJheDifxgP2sjmPNg=
 		</data>
 		<key>Frameworks/App.framework/Info.plist</key>
 		<data>
@@ -118,11 +118,11 @@
 		</data>
 		<key>Frameworks/App.framework/_CodeSignature/CodeResources</key>
 		<data>
-		cZfx18cPJ29nDmwDDQcQaMTUSCA=
+		u88k88bAyQmdGeWRqFiBxoMAvHo=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
 		<data>
-		XC1yPZqa8h4tzKqyVkODieuroB8=
+		OZgJlwZURDqHXFBBCTU3EZBvMws=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/FontManifest.json</key>
 		<data>
@@ -136,6 +136,10 @@
 		<data>
 		GGd/t+l+chkyhXqcaghiM+Ghs8Q=
 		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/images/maspman.png</key>
+		<data>
+		JJ6a4Cya2OxBdOnVS4NeDQ0I9A0=
+		</data>
 		<key>Frameworks/App.framework/flutter_assets/fonts/MaterialIcons-Regular.otf</key>
 		<data>
 		zg6AEuOKM55BH/RKiXqZqsORXXE=
@@ -146,7 +150,7 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/kernel_blob.bin</key>
 		<data>
-		/rr/Mc1DdBCx72ioLuTlTUITpUw=
+		6/mtkw3oDU+VxwTf8AlitGqSVC0=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
 		<data>
@@ -358,11 +362,11 @@
 		</data>
 		<key>Frameworks/url_launcher_ios.framework/url_launcher_ios</key>
 		<data>
-		KEDAPiQvg0z8OlgXDPEYwo1r/HQ=
+		JZeP/FJlqa51tbi3XIzkUhJzYyU=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		e6mY5DGv0Ukq6vvF4qGgYPJpK/Y=
+		IiFK7a2RhWbOxE32p3th//tt2IY=
 		</data>
 		<key>PkgInfo</key>
 		<data>
@@ -584,11 +588,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			9r9CBymb6NEdcxjLf+F+K/X4Kv0=
+			7wwfwwSp1GLecnCd5PMV9sXDTOg=
 			</data>
 			<key>hash2</key>
 			<data>
-			wqpoVqIxqUqYV8Dq1NNLsgI8NLlcu9O69QT7qZT/DKc=
+			6Ke2tntpvcm1BodAA+GJ3uiZJOXJUEDPVDSWNKZzam4=
 			</data>
 		</dict>
 		<key>Base.lproj/LaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib</key>
@@ -661,11 +665,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			3ElQKnLh6v1blMDg0dQl0R7VOVA=
+			c4IS3TPB14GJheDifxgP2sjmPNg=
 			</data>
 			<key>hash2</key>
 			<data>
-			CjMuoOPYZVgQH1fFqF8/1arxr90njJXTE2ZjkifZ/FQ=
+			RxeYHA7Wa0ORAvQRk8qixFaiji12CNZRyYqCCTRUH8E=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/Info.plist</key>
@@ -683,22 +687,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			cZfx18cPJ29nDmwDDQcQaMTUSCA=
+			u88k88bAyQmdGeWRqFiBxoMAvHo=
 			</data>
 			<key>hash2</key>
 			<data>
-			i/yFPuwUTDV+O+4tCAXAuZMtTIXDi30eWkZRYb8+j0M=
+			Q/zCTbrasqkKRENjGtDlOs5yY/BfVxnrJPoJC3T7CQU=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			XC1yPZqa8h4tzKqyVkODieuroB8=
+			OZgJlwZURDqHXFBBCTU3EZBvMws=
 			</data>
 			<key>hash2</key>
 			<data>
-			nzMa9lO6LTop1binuTUJcHrY5muohCdb/6Fc0U6s3xE=
+			1WV3EPGavlq9mFO1QLqtv2QORlXY/Fb6z0BgTHxlvPU=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/FontManifest.json</key>
@@ -734,6 +738,17 @@
 			WDXI17rH4a0To3xkCetU+IShjPkmGcFuPxt5bv2FU+8=
 			</data>
 		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/images/maspman.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			JJ6a4Cya2OxBdOnVS4NeDQ0I9A0=
+			</data>
+			<key>hash2</key>
+			<data>
+			QDMCG5I3qIbF+1VD3/yWqBye4w179CdtbgNBZFNYAxc=
+			</data>
+		</dict>
 		<key>Frameworks/App.framework/flutter_assets/fonts/MaterialIcons-Regular.otf</key>
 		<dict>
 			<key>hash</key>
@@ -760,11 +775,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			/rr/Mc1DdBCx72ioLuTlTUITpUw=
+			6/mtkw3oDU+VxwTf8AlitGqSVC0=
 			</data>
 			<key>hash2</key>
 			<data>
-			9yH9kBqed7l3x3eD60ju4KpAkT91F+rEY8R6g2L4z8s=
+			hMSdL2ylMUV5qH+oeSGhPBrLvNs/2zGULvEHBwXkdig=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
@@ -1343,11 +1358,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			KEDAPiQvg0z8OlgXDPEYwo1r/HQ=
+			JZeP/FJlqa51tbi3XIzkUhJzYyU=
 			</data>
 			<key>hash2</key>
 			<data>
-			Vye5NfOF9B+BqwQZ4Z5IHpSBl7lc5oS4SJYS7puD/z4=
+			/ui91NGyOUIwWyc2+0Pq62MdWoc0ewcpNYxE0X9Dco8=
 			</data>
 		</dict>
 	</dict>
