@@ -160,31 +160,15 @@ class _SettingPageState extends State<SettingPage> {
                       ),
                     ),
                     Container(
-                      width: double.infinity,
+                      //width: double.infinity,
                       // ユーザー登録ボタン
                       child: ElevatedButton(
                         child: Text('ユーザー登録'),
-                        onPressed: () async {
-                          try {
-                            // メール/パスワードでユーザー登録
-                            final FirebaseAuth auth = FirebaseAuth.instance;
-                            await auth.createUserWithEmailAndPassword(
-                              email: email,
-                              password: password,
-                            );
-                            // ユーザー登録に成功した場合
-                            // チャット画面に遷移＋ログイン画面を破棄
-                            await Navigator.of(context).pushReplacement(
-                              MaterialPageRoute(builder: (context) {
-                                return Main_manue();
-                              }),
-                            );
-                          } catch (e) {
-                            // ユーザー登録に失敗した場合
-                            setState(() {
-                              infoText = "登録に失敗しました"; //}：${e.toString()}";
-                            });
-                          }
+                        onPressed: () {
+                          Navigator.of(context)
+                              .push(MaterialPageRoute(builder: (context) {
+                            return RegisterPage();
+                          }));
                         },
                       ),
                     ),
@@ -198,3 +182,145 @@ class _SettingPageState extends State<SettingPage> {
     );
   }
 }
+
+class RegisterPage extends StatefulWidget {
+  const RegisterPage({Key? key}) : super(key: key);
+
+  @override
+  State<RegisterPage> createState() => _RegisterPageState();
+}
+
+class _RegisterPageState extends State<RegisterPage> {
+  String r_email = '';
+  String r_password = '';
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(),
+      body: Center(
+        child: Container(
+          // ユーザー登録ボタン
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: TextFormField(
+                  decoration: InputDecoration(
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(16),
+                      borderSide: const BorderSide(
+                        color: Colors.blue,
+                        width: 2.0,
+                      ),
+                    ),
+                    labelStyle: TextStyle(
+                      fontSize: 12,
+                      color: Colors.blue,
+                    ),
+                    labelText: 'Emailアドレス',
+                    prefixIcon:
+                        Icon(IconData(0xf018, fontFamily: 'MaterialIcons')),
+                    floatingLabelStyle: const TextStyle(fontSize: 12),
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(16),
+                      borderSide: BorderSide(
+                        color: Colors.blue[100]!,
+                        width: 1.0,
+                      ),
+                    ),
+                  ),
+                  onChanged: (String value) {
+                    setState(() {
+                      r_email = value;
+                    });
+                  },
+                ),
+              ),
+              // パスワード入力
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: TextFormField(
+                  decoration: InputDecoration(
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(16),
+                      borderSide: const BorderSide(
+                        color: Colors.blue,
+                        width: 2.0,
+                      ),
+                    ),
+                    labelStyle: TextStyle(
+                      fontSize: 12,
+                      color: Colors.blue,
+                    ),
+                    labelText: 'パスワード',
+                    prefixIcon:
+                        Icon(IconData(0xf052b, fontFamily: 'MaterialIcons')),
+                    floatingLabelStyle: const TextStyle(fontSize: 12),
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(16),
+                      borderSide: BorderSide(
+                        color: Colors.blue[100]!,
+                        width: 1.0,
+                      ),
+                    ),
+                  ),
+                  obscureText: true,
+                  onChanged: (String value) {
+                    setState(() {
+                      r_password = value;
+                    });
+                  },
+                ),
+              ),
+
+              ElevatedButton(
+                child: Text('ユーザー登録'),
+                onPressed: () async {
+                  try {
+                    // メール/パスワードでユーザー登録
+                    final FirebaseAuth auth = FirebaseAuth.instance;
+                    await auth.createUserWithEmailAndPassword(
+                      email: r_email,
+                      password: r_password,
+                    );
+                    // 登録に成功した場合
+                    // 画面遷移＋画面を破棄
+                    await Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(builder: (context) {
+                        return Main_manue();
+                      }),
+                    );
+                  } catch (e) {
+                    // 登録に失敗した場合
+                    setState(() {
+                      showDialog(
+                        context: context,
+                        barrierDismissible: true,
+                        builder: (_) {
+                          return CupertinoAlertDialog(
+                            title: Text("登録に失敗しました"),
+                            content: Text("${e.toString()}"),
+                            actions: [
+                              FlatButton(
+                                child: Text("OK"),
+                                onPressed: () => Navigator.pop(context),
+                              ),
+                            ],
+                          );
+                        },
+                      );
+                    });
+                  }
+                },
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+//TODO: add register page
+//TODO: change login button
