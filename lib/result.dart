@@ -4,15 +4,19 @@ import 'package:fl_chart/fl_chart.dart';
 class Result extends StatelessWidget {
   //int a;
   // Result({required this.a});
+  var city = "生駒市";
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('本日の○○市の投票結果'),
+        title: Text("本日の$cityの投票結果"),
       ),
       body: Center(
         child: Column(
+            //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            //mainAxisSize: MainAxisSize.min,
+            //dding: const EdgeInsets.all(100),
             children: [
               Spacer(flex: 2),
               SizedBox(
@@ -20,25 +24,25 @@ class Result extends StatelessWidget {
                   height: 300,
                   child: BarChart(
                     BarChartData(
-                        titlesData: FlTitlesData(
-                            bottomTitles: AxisTitles(
-                                sideTitles: SideTitles(
-                                    showTitles: false
-                                )
-                            ),
-                            topTitles: AxisTitles(
-                                sideTitles: SideTitles(
-                                    showTitles: false
-                                )
-                            )
-                        ),
+                      titlesData: FlTitlesData(
+                        bottomTitles: AxisTitles(
+                        sideTitles: SideTitles(
+                          showTitles: false
+                        )
+                      ),
+                        topTitles: AxisTitles(
+                          sideTitles: SideTitles(
+                            showTitles: false
+                          )
+                        )
+                      ),
                         borderData: FlBorderData(
-                          border: const Border(
-                            top: BorderSide.none,
-                            right: BorderSide.none,
-                            left: BorderSide(width: 1),
-                            bottom: BorderSide(width: 1),
-                          ),
+                            border: const Border(
+                          top: BorderSide.none,
+                          right: BorderSide.none,
+                          left: BorderSide(width: 1),
+                          bottom: BorderSide(width: 1),
+                        ),
                         ),
                         groupsSpace: 10,
                         barGroups: [
@@ -55,9 +59,15 @@ class Result extends StatelessWidget {
                 //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Spacer(flex: 7),
-                  Text("する"),
+                  Text("する",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                  )),
                   Spacer(flex: 2),
-                  Text("しない"),
+                  Text("しない",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                  )),
                   Spacer(flex: 7),
                 ],
               ),
@@ -76,12 +86,12 @@ class Result extends StatelessWidget {
                         onPrimary: Colors.black,
                       ),
                       onPressed: () => {
-                        Navigator.of(context)
-                            .push(MaterialPageRoute(builder: (context) {
-                          return Result();
-                        }))
-                      }
-                  )
+                            Navigator.of(context)
+                                .push(MaterialPageRoute(builder: (context) {
+                              return Result();//メインメニューに書き換えること
+                            }))
+                          }
+                          )
               ),
               Spacer(flex: 2),
             ]),
