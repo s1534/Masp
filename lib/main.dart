@@ -95,7 +95,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     );
                   },
                   child: Text(
-                    'メインメニュー',
+                    'メインメニュー222',
                     style: TextStyle(color: Colors.white, fontSize: 20),
                   ),
                   style: ElevatedButton.styleFrom(primary: Colors.red[200]),
