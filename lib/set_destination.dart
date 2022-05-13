@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 import 'package:flutter/cupertino.dart';
+import 'destination.dart';
 import 'init.dart';
 
 class Set_destination extends StatefulWidget {
@@ -14,7 +15,16 @@ class _Set_destinationState extends State<Set_destination> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('生駒市在住'), backgroundColor: Colors.cyan),
+      appBar: AppBar(
+        elevation: 0,
+        backgroundColor: Colors.white,
+        title: Text("Masp",
+            style: TextStyle(
+                fontSize: 30,
+                fontWeight: FontWeight.bold,
+                color: Colors.black)),
+        iconTheme: IconThemeData(color: Colors.black),
+      ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -37,7 +47,7 @@ class _Set_destinationState extends State<Set_destination> {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => MyApp()),
+                  MaterialPageRoute(builder: (context) => Result()),
                 );
               },
               child: const Text(
