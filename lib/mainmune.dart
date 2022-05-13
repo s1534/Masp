@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:testmasp/user_setting.dart';
 import "set_destination.dart";
+import "yohou.dart";
+import "user_setting.dart";
 import "vote.dart";
 
 class Main_manue extends StatefulWidget {
@@ -149,7 +152,7 @@ Row RowButton2(BuildContext context) {
               Navigator.of(context).push(
                 PageRouteBuilder(
                   pageBuilder: (context, animation, secondaryAnimation) {
-                    return Vote();
+                    return YohouPage();
                   },
                   transitionsBuilder:
                       (context, animation, secondaryAnimation, child) {
@@ -196,19 +199,21 @@ Row RowButton2(BuildContext context) {
           child: ElevatedButton(
             onPressed: () => {
               Navigator.of(context).push(MaterialPageRoute(builder: (context) {
-                return Set_destination();
+                return UserSettingPage();
               }))
             },
             child: Padding(
               padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
               child: Column(
                 children: [
-                  Text(
-                    "設定",
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold),
+                  Center(
+                    child: Text(
+                      "ユーザー設定",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold),
+                    ),
                   ),
                   Icon(IconData(0xe57f, fontFamily: 'MaterialIcons'), size: 80)
                 ],
