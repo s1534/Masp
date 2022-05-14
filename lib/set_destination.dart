@@ -40,7 +40,7 @@ class _Set_destinationState extends State<Set_destination> {
                   fontSize: 40,
                   fontWeight: FontWeight.bold),
             ),
-            Expanded(child: Image.asset('assets/images/destination.png')),
+            Expanded(child: Image.asset('assets/images/destination_trans.png')),
             Row(
               children: [
                 Padding(
