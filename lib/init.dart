@@ -61,7 +61,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(0, 50, 0, 0),
+                  padding: const EdgeInsets.fromLTRB(0, 200, 0, 0),
                   child: Container(
                     width: 230,
                     height: 230,
@@ -69,7 +69,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(0, 100, 0, 0),
+                  padding: const EdgeInsets.fromLTRB(0, 50, 0, 0),
                   child: Container(
                     child: Text('Tap to Start',
                         style: TextStyle(

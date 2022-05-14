@@ -56,10 +56,28 @@ class _Vote extends State<Vote> {
                         onPrimary: Colors.black,
                       ),
                       onPressed: () => {
-                            Navigator.of(context)
-                                .push(MaterialPageRoute(builder: (context) {
-                              return Result();
-                            }))
+                            Navigator.of(context).push(
+                              PageRouteBuilder(
+                                pageBuilder:
+                                    (context, animation, secondaryAnimation) {
+                                  return Result();
+                                },
+                                transitionsBuilder: (context, animation,
+                                    secondaryAnimation, child) {
+                                  final double begin = 0.0;
+                                  final double end = 1.5;
+                                  final Animatable<double> tween =
+                                      Tween(begin: begin, end: end).chain(
+                                          CurveTween(curve: Curves.easeInOut));
+                                  final Animation<double> doubleAnimation =
+                                      animation.drive(tween);
+                                  return FadeTransition(
+                                    opacity: doubleAnimation,
+                                    child: child,
+                                  );
+                                },
+                              ),
+                            )
                           })),
               SizedBox(
                   width: 200,
@@ -75,10 +93,32 @@ class _Vote extends State<Vote> {
                         onPrimary: Colors.black,
                       ),
                       onPressed: () => {
-                            Navigator.of(context)
-                                .push(MaterialPageRoute(builder: (context) {
-                              return Result();
-                            }))
+                            Navigator.of(context).push(
+                              PageRouteBuilder(
+                                pageBuilder:
+                                    (context, animation, secondaryAnimation) {
+                                  return Result();
+                                },
+                                transitionsBuilder: (context, animation,
+                                    secondaryAnimation, child) {
+                                  final double begin = 0.0;
+                                  final double end = 1.5;
+                                  final Animatable<double> tween =
+                                      Tween(begin: begin, end: end).chain(
+                                          CurveTween(curve: Curves.easeInOut));
+                                  final Animation<double> doubleAnimation =
+                                      animation.drive(tween);
+                                  return FadeTransition(
+                                    opacity: doubleAnimation,
+                                    child: child,
+                                  );
+                                },
+                              ),
+                            )
+                            // Navigator.of(context)
+                            //     .push(MaterialPageRoute(builder: (context) {
+                            //   return Result();
+                            // }))
                           })),
               RichText(
                   text: TextSpan(children: [

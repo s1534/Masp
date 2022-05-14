@@ -96,18 +96,18 @@ class _Set_destinationState extends State<Set_destination> {
           mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
             Padding(
-              padding: EdgeInsets.only(top: 40),
-            ),
-            Container(
-              height: 100.0,
-              width: 200.0,
-              child: Text(
-                _selectedItem,
-                style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 40,
-                    fontWeight: FontWeight.bold),
-                textAlign: TextAlign.center,
+              padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
+              child: Container(
+                height: 100.0,
+                width: 200.0,
+                child: Text(
+                  _selectedItem,
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 40,
+                      fontWeight: FontWeight.bold),
+                  textAlign: TextAlign.center,
+                ),
               ),
             ),
             Container(
@@ -122,68 +122,88 @@ class _Set_destinationState extends State<Set_destination> {
                 },
               ),
             ),
-            Padding(
-              padding: EdgeInsets.only(top: 60),
-            ),
             // Expanded(child: Image.asset('assets/images/destination_trans.png')),
-            Container(
-              // height: 140,
-              child: Row(
-                children: [
-                  Padding(
-                    padding: EdgeInsets.only(left: 13),
-                  ),
-                  SizedBox(
-                    width: 190,
-                    height: 80,
-                    child: ElevatedButton(
-                      onPressed: () {
-                        _showModalPicker(context);
-                        flag = true;
-                        print("aaaa");
-                      },
-                      child: const Text(
-                        'どこに行く？',
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold),
-                      ),
-                      style: ElevatedButton.styleFrom(primary: Colors.cyan),
-                    ),
-                  ),
-                  SizedBox(width: 22),
-                  SizedBox(
-                    width: 190,
-                    height: 80,
-                    child: ElevatedButton.icon(
-                      onPressed: !flag
-                          ? null
-                          : () {
-                              // 何かEnableの時の処理
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => Result()),
-                              );
-                            },
-                      label: Text(
-                        '確定する',
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold),
-                      ),
-                      icon: Icon(Icons.directions_walk_outlined,
-                          size: 40, color: Colors.white),
-                      style: ElevatedButton.styleFrom(primary: Colors.orange),
-                    ),
-                  ),
-                ],
-              ),
-            ),
             Padding(
-              padding: EdgeInsets.all(70),
+              padding: const EdgeInsets.fromLTRB(0, 50, 0, 0),
+              child: Container(
+                // height: 140,
+                child: Row(
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.only(left: 13),
+                    ),
+                    SizedBox(
+                      width: 160,
+                      height: 80,
+                      child: ElevatedButton(
+                        onPressed: () {
+                          _showModalPicker(context);
+                          flag = true;
+                          print("aaaa");
+                        },
+                        child: const Text(
+                          'どこに行く？',
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold),
+                        ),
+                        style: ElevatedButton.styleFrom(primary: Colors.cyan),
+                      ),
+                    ),
+                    SizedBox(width: 22),
+                    SizedBox(
+                      width: 150,
+                      height: 80,
+                      child: ElevatedButton.icon(
+                        onPressed: !flag
+                            ? null
+                            : () {
+                                Navigator.of(context).push(
+                                  PageRouteBuilder(
+                                    pageBuilder: (context, animation,
+                                        secondaryAnimation) {
+                                      return Result();
+                                    },
+                                    transitionsBuilder: (context, animation,
+                                        secondaryAnimation, child) {
+                                      final double begin = 0.0;
+                                      final double end = 1.0;
+                                      final Animatable<double> tween =
+                                          Tween(begin: begin, end: end).chain(
+                                              CurveTween(
+                                                  curve: Curves.easeInOut));
+                                      final Animation<double> doubleAnimation =
+                                          animation.drive(tween);
+                                      return FadeTransition(
+                                        opacity: doubleAnimation,
+                                        child: child,
+                                      );
+                                    },
+                                  ),
+                                );
+                                // 何かEnableの時の処理
+                                // Navigator.push(
+                                //   context,
+                                //   MaterialPageRoute(
+                                //       builder: (context) => Result()),
+                                // );
+                              },
+                        label: Text(
+                          '確定する',
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold),
+                        ),
+                        icon: Icon(Icons.directions_walk_outlined,
+                            size: 40, color: Colors.white),
+                        style: ElevatedButton.styleFrom(primary: Colors.orange),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
             ),
           ],
         ),

@@ -27,7 +27,7 @@ class Result extends StatelessWidget {
             children: [
               Spacer(flex: 2),
               SizedBox(
-                  width: 500,
+                  width: 300,
                   height: 300,
                   child: BarChart(
                     BarChartData(
