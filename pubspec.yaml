@@ -40,10 +40,12 @@ dependencies:
   flutter_datetime_picker: ^1.5.1
   url_launcher: ^6.1.2
   fl_chart: ^0.50.1
+  google_maps_flutter: ^2.1.5
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  google_maps_flutter: ^2.1.5
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is

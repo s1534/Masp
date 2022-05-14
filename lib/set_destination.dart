@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:flutter/cupertino.dart';
 import 'destination.dart';
 import 'init.dart';
+import 'dart:async';
 
 class Set_destination extends StatefulWidget {
   const Set_destination({Key? key}) : super(key: key);
@@ -12,6 +14,69 @@ class Set_destination extends StatefulWidget {
 }
 
 class _Set_destinationState extends State<Set_destination> {
+  Completer<GoogleMapController> _controller = Completer();
+
+  static final CameraPosition _kGooglePlex = CameraPosition(
+    target: LatLng(34.70834090180336, 135.71010105867856),
+    zoom: 10,
+  );
+  static final CameraPosition _kLake = CameraPosition(
+    target: LatLng(34.660918499112995, 135.50560491669046),
+    zoom: 10,
+  );
+  Set<Marker> _markers = {
+    Marker(
+      markerId: MarkerId("marker1"),
+      position: LatLng(34.70834090180336, 135.71010105867856),
+      infoWindow: InfoWindow(title: "生駒市", snippet: "感染者数:1000人"),
+    ),
+    Marker(
+      markerId: MarkerId("marker2"),
+      position: LatLng(34.68475887695935, 135.80507809188992),
+      infoWindow: InfoWindow(title: "奈良市", snippet: "感染者数:1000人"),
+    ),
+    Marker(
+      markerId: MarkerId("marker3"),
+      position: LatLng(34.65011737829483, 135.78182489913343),
+      infoWindow: InfoWindow(title: "大和郡山市", snippet: "感染者数:2000人"),
+    ),
+    Marker(
+      markerId: MarkerId("marker4"),
+      position: LatLng(34.509917218876275, 135.74332269797887),
+      infoWindow: InfoWindow(title: "大和高田市", snippet: "感染者数:2000人"),
+    ),
+    Marker(
+      markerId: MarkerId("marker5"),
+      position: LatLng(34.59587111226869, 135.86332156618963),
+      infoWindow: InfoWindow(title: "天理市", snippet: "感染者数:2000人"),
+    ),
+    Marker(
+      markerId: MarkerId("marker6"),
+      position: LatLng(34.50118465050398, 135.78845909751686),
+      infoWindow: InfoWindow(title: "橿原市", snippet: "感染者数:2000人"),
+    ),
+    Marker(
+      markerId: MarkerId("marker7"),
+      position: LatLng(34.52204589818176, 135.87868264444927),
+      infoWindow: InfoWindow(title: "桜井市", snippet: "感染者数:2000人"),
+    ),
+    Marker(
+      markerId: MarkerId("marker8"),
+      position: LatLng(34.35944201747558, 135.69231863372528),
+      infoWindow: InfoWindow(title: "五條市", snippet: "感染者数:2000人"),
+    ),
+    Marker(
+      markerId: MarkerId("marker9"),
+      position: LatLng(34.43373905886754, 135.72256175634035),
+      infoWindow: InfoWindow(title: "御所市", snippet: "感染者数:2000人"),
+    ),
+    Marker(
+      markerId: MarkerId("marker10"),
+      position: LatLng(34.549053380627804, 135.68928430063434),
+      infoWindow: InfoWindow(title: "香芝市", snippet: "感染者数:2000人"),
+    ),
+  };
+
   @override
   bool flag = false;
   Widget build(BuildContext context) {
@@ -31,7 +96,7 @@ class _Set_destinationState extends State<Set_destination> {
           mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
             Padding(
-              padding: EdgeInsets.only(top: 80),
+              padding: EdgeInsets.only(top: 40),
             ),
             Container(
               height: 100.0,
@@ -45,57 +110,77 @@ class _Set_destinationState extends State<Set_destination> {
                 textAlign: TextAlign.center,
               ),
             ),
-            Expanded(child: Image.asset('assets/images/destination_trans.png')),
-            Row(
-              children: [
-                Padding(
-                  padding: EdgeInsets.only(left: 13),
-                ),
-                SizedBox(
-                  width: 190,
-                  height: 100,
-                  child: ElevatedButton(
-                    onPressed: () {
-                      _showModalPicker(context);
-                      flag = true;
-                    },
-                    child: const Text(
-                      'どこに行く？',
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold),
-                    ),
-                    style: ElevatedButton.styleFrom(primary: Colors.cyan),
+            Container(
+              height: 400.0,
+              width: 400.0,
+              child: GoogleMap(
+                markers: _markers,
+                mapType: MapType.normal,
+                initialCameraPosition: _kLake,
+                onMapCreated: (GoogleMapController controller) {
+                  _controller.complete(controller);
+                },
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.only(top: 60),
+            ),
+            // Expanded(child: Image.asset('assets/images/destination_trans.png')),
+            Container(
+              // height: 140,
+              child: Row(
+                children: [
+                  Padding(
+                    padding: EdgeInsets.only(left: 13),
                   ),
-                ),
-                SizedBox(width: 22),
-                SizedBox(
-                  width: 190,
-                  height: 100,
-                  child: ElevatedButton.icon(
-                    onPressed: !flag
-                        ? null
-                        : () {
-                            // 何かEnableの時の処理
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) => Result()),
-                            );
-                          },
-                    label: Text(
-                      '確定する',
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold),
+                  SizedBox(
+                    width: 190,
+                    height: 80,
+                    child: ElevatedButton(
+                      onPressed: () {
+                        _showModalPicker(context);
+                        flag = true;
+                        print("aaaa");
+                      },
+                      child: const Text(
+                        'どこに行く？',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold),
+                      ),
+                      style: ElevatedButton.styleFrom(primary: Colors.cyan),
                     ),
-                    icon: Icon(Icons.directions_walk_outlined,
-                        size: 40, color: Colors.white),
-                    style: ElevatedButton.styleFrom(primary: Colors.orange),
                   ),
-                ),
-              ],
+                  SizedBox(width: 22),
+                  SizedBox(
+                    width: 190,
+                    height: 80,
+                    child: ElevatedButton.icon(
+                      onPressed: !flag
+                          ? null
+                          : () {
+                              // 何かEnableの時の処理
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => Result()),
+                              );
+                            },
+                      label: Text(
+                        '確定する',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold),
+                      ),
+                      icon: Icon(Icons.directions_walk_outlined,
+                          size: 40, color: Colors.white),
+                      style: ElevatedButton.styleFrom(primary: Colors.orange),
+                    ),
+                  ),
+                ],
+              ),
             ),
             Padding(
               padding: EdgeInsets.all(70),
@@ -104,10 +189,6 @@ class _Set_destinationState extends State<Set_destination> {
         ),
       ),
     );
-  }
-
-  Map<dynamic, dynamic> get goto {
-    return {};
   }
 
   void _showModalPicker(BuildContext context) {
@@ -120,7 +201,7 @@ class _Set_destinationState extends State<Set_destination> {
             onTap: () {
               Navigator.pop(context);
               print(flag);
-              // flag = true;
+              _goToAnywhere();
             },
             child: CupertinoPicker(
               itemExtent: 40,
@@ -155,9 +236,10 @@ class _Set_destinationState extends State<Set_destination> {
     );
   }
 
-  // void _goTo(bool flag) {
-  //   print(flag);
-  // }
+  Future<void> _goToAnywhere() async {
+    final GoogleMapController controller = await _controller.future;
+    controller.animateCamera(CameraUpdate.newCameraPosition(_kGooglePlex));
+  }
 
   void _onSelectedItemChanged(int index) {
     setState(() {
