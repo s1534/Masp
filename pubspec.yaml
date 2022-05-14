@@ -64,7 +64,7 @@ flutter:
   assets:
     - "assets/images/masp.png"
     - "assets/images/maspman.png"
-    - "assets/images/destination.png"
+    - "assets/images/destination_cat.jpg"
     - "assets/images/destination_trans.png"
 
 flutter_native_splash:
