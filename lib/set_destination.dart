@@ -52,6 +52,7 @@ class _Set_destinationState extends State<Set_destination> {
                   child: ElevatedButton(
                     onPressed: () {
                       _showModalPicker(context);
+                      flag = true;
                     },
                     child: const Text(
                       'どこに行く？',
@@ -68,13 +69,15 @@ class _Set_destinationState extends State<Set_destination> {
                   width: 190,
                   height: 100,
                   child: ElevatedButton.icon(
-                    onPressed: () {
-                      flag = true;
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => Result()),
-                      );
-                    },
+                    onPressed: !flag
+                        ? null
+                        : () {
+                            // 何かEnableの時の処理
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => Result()),
+                            );
+                          },
                     label: Text(
                       '確定する',
                       style: TextStyle(
@@ -112,6 +115,7 @@ class _Set_destinationState extends State<Set_destination> {
             onTap: () {
               Navigator.pop(context);
               print(flag);
+              // flag = true;
             },
             child: CupertinoPicker(
               itemExtent: 40,
