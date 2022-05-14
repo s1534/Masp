@@ -37,6 +37,7 @@ class _Set_destinationState extends State<Set_destination> {
                   fontSize: 40,
                   fontWeight: FontWeight.bold),
             ),
+            Expanded(child: Image.asset('assets/images/destination.png')),
             SizedBox(
               width: 200,
               height: 100,
@@ -75,24 +76,6 @@ class _Set_destinationState extends State<Set_destination> {
                 icon: Icon(Icons.flight, size: 40, color: Colors.white),
                 style: ElevatedButton.styleFrom(primary: Colors.orange),
               ),
-            ),
-            SizedBox(
-              width: 200,
-              height: 100,
-              // child: ElevatedButton(
-              //   onPressed: () {
-              //     flag = true;
-              //     Navigator.push(
-              //       context,
-              //       MaterialPageRoute(builder: (context) => Result()),
-              //     );
-              //   },
-              //   child: const Text(
-              //     '確定する',
-              //     style: TextStyle(color: Colors.white, fontSize: 20),
-              //   ),
-              //   style: ElevatedButton.styleFrom(primary: Colors.orange),
-              // ),
             ),
           ],
         ),
