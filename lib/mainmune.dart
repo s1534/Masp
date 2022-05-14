@@ -107,10 +107,31 @@ class _Main_manueState extends State<Main_manue> {
             height: 150,
             child: ElevatedButton(
               onPressed: () => {
-                Navigator.of(context)
-                    .push(MaterialPageRoute(builder: (context) {
-                  return Set_destination();
-                }))
+                Navigator.of(context).push(
+                  PageRouteBuilder(
+                    pageBuilder: (context, animation, secondaryAnimation) {
+                      return Set_destination();
+                    },
+                    transitionsBuilder:
+                        (context, animation, secondaryAnimation, child) {
+                      final double begin = 0.0;
+                      final double end = 1.0;
+                      final Animatable<double> tween =
+                          Tween(begin: begin, end: end)
+                              .chain(CurveTween(curve: Curves.easeInOut));
+                      final Animation<double> doubleAnimation =
+                          animation.drive(tween);
+                      return FadeTransition(
+                        opacity: doubleAnimation,
+                        child: child,
+                      );
+                    },
+                  ),
+                )
+                // Navigator.of(context)
+                //     .push(MaterialPageRoute(builder: (context) {
+                //   return Set_destination();
+                // }))
               },
               child: Padding(
                 padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
@@ -198,9 +219,30 @@ Row RowButton2(BuildContext context) {
           height: 150,
           child: ElevatedButton(
             onPressed: () => {
-              Navigator.of(context).push(MaterialPageRoute(builder: (context) {
-                return UserSettingPage();
-              }))
+              Navigator.of(context).push(
+                PageRouteBuilder(
+                  pageBuilder: (context, animation, secondaryAnimation) {
+                    return UserSettingPage();
+                  },
+                  transitionsBuilder:
+                      (context, animation, secondaryAnimation, child) {
+                    final double begin = 0.0;
+                    final double end = 1.0;
+                    final Animatable<double> tween =
+                        Tween(begin: begin, end: end)
+                            .chain(CurveTween(curve: Curves.easeInOut));
+                    final Animation<double> doubleAnimation =
+                        animation.drive(tween);
+                    return FadeTransition(
+                      opacity: doubleAnimation,
+                      child: child,
+                    );
+                  },
+                ),
+              )
+              // Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+              //   return UserSettingPage();
+              // }))
             },
             child: Padding(
               padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
