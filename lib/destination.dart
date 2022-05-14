@@ -9,7 +9,14 @@ class Result extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('本日の○○市の投票結果'),
+        elevation: 0,
+        backgroundColor: Colors.white,
+        title: Text("Masp",
+            style: TextStyle(
+                fontSize: 30,
+                fontWeight: FontWeight.bold,
+                color: Colors.black)),
+        iconTheme: IconThemeData(color: Colors.black),
       ),
       body: Center(
         child: Column(children: [
