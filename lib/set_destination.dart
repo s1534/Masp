@@ -30,6 +30,9 @@ class _Set_destinationState extends State<Set_destination> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
+            Padding(
+              padding: EdgeInsets.only(top: 80),
+            ),
             Text(
               _selectedItem,
               style: TextStyle(
@@ -38,44 +41,56 @@ class _Set_destinationState extends State<Set_destination> {
                   fontWeight: FontWeight.bold),
             ),
             Expanded(child: Image.asset('assets/images/destination.png')),
-            SizedBox(
-              width: 200,
-              height: 100,
-              child: ElevatedButton(
-                onPressed: () {
-                  _showModalPicker(context);
-                },
-                child: const Text(
-                  'どこに行く？',
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold),
+            Row(
+              children: [
+                Padding(
+                  padding: EdgeInsets.only(left: 12),
                 ),
-                style: ElevatedButton.styleFrom(primary: Colors.cyan),
-              ),
+                SizedBox(
+                  width: 190,
+                  height: 100,
+                  child: ElevatedButton(
+                    onPressed: () {
+                      _showModalPicker(context);
+                    },
+                    child: const Text(
+                      'どこに行く？',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold),
+                    ),
+                    style: ElevatedButton.styleFrom(primary: Colors.cyan),
+                  ),
+                ),
+                SizedBox(width: 25),
+                SizedBox(
+                  width: 190,
+                  height: 100,
+                  child: ElevatedButton.icon(
+                    onPressed: () {
+                      flag = true;
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Result()),
+                      );
+                    },
+                    label: Text(
+                      '確定する',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold),
+                    ),
+                    icon: Icon(Icons.directions_walk_outlined,
+                        size: 40, color: Colors.white),
+                    style: ElevatedButton.styleFrom(primary: Colors.orange),
+                  ),
+                ),
+              ],
             ),
-            SizedBox(
-              width: 200,
-              height: 100,
-              child: ElevatedButton.icon(
-                onPressed: () {
-                  flag = true;
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => Result()),
-                  );
-                },
-                label: Text(
-                  '確定する',
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold),
-                ),
-                icon: Icon(Icons.flight, size: 40, color: Colors.white),
-                style: ElevatedButton.styleFrom(primary: Colors.orange),
-              ),
+            Padding(
+              padding: EdgeInsets.all(70),
             ),
           ],
         ),
