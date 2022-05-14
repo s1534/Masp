@@ -146,6 +146,12 @@
       "languageVersion": "2.15"
     },
     {
+      "name": "flutter_plugin_android_lifecycle",
+      "rootUri": "file:///Users/mishima/development/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_plugin_android_lifecycle-2.0.6",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "flutter_test",
       "rootUri": "file:///Users/mishima/development/flutter/packages/flutter_test",
       "packageUri": "lib/",
@@ -154,6 +160,18 @@
     {
       "name": "flutter_web_plugins",
       "rootUri": "file:///Users/mishima/development/flutter/packages/flutter_web_plugins",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "google_maps_flutter",
+      "rootUri": "file:///Users/mishima/development/flutter/.pub-cache/hosted/pub.dartlang.org/google_maps_flutter-2.1.5",
+      "packageUri": "lib/",
+      "languageVersion": "2.14"
+    },
+    {
+      "name": "google_maps_flutter_platform_interface",
+      "rootUri": "file:///Users/mishima/development/flutter/.pub-cache/hosted/pub.dartlang.org/google_maps_flutter_platform_interface-2.1.5",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -250,6 +268,12 @@
     {
       "name": "stream_channel",
       "rootUri": "file:///Users/mishima/development/flutter/.pub-cache/hosted/pub.dartlang.org/stream_channel-2.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "stream_transform",
+      "rootUri": "file:///Users/mishima/development/flutter/.pub-cache/hosted/pub.dartlang.org/stream_transform-2.0.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -356,7 +380,7 @@
       "languageVersion": "2.16"
     }
   ],
-  "generated": "2022-05-14T07:40:19.417702Z",
+  "generated": "2022-05-14T09:27:15.795071Z",
   "generator": "pub",
   "generatorVersion": "2.16.2"
 }
