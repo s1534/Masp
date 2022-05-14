@@ -33,12 +33,17 @@ class _Set_destinationState extends State<Set_destination> {
             Padding(
               padding: EdgeInsets.only(top: 80),
             ),
-            Text(
-              _selectedItem,
-              style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 40,
-                  fontWeight: FontWeight.bold),
+            Container(
+              height: 100.0,
+              width: 200.0,
+              child: Text(
+                _selectedItem,
+                style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 40,
+                    fontWeight: FontWeight.bold),
+                textAlign: TextAlign.center,
+              ),
             ),
             Expanded(child: Image.asset('assets/images/destination_trans.png')),
             Row(
