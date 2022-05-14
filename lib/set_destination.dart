@@ -44,7 +44,7 @@ class _Set_destinationState extends State<Set_destination> {
             Row(
               children: [
                 Padding(
-                  padding: EdgeInsets.only(left: 12),
+                  padding: EdgeInsets.only(left: 13),
                 ),
                 SizedBox(
                   width: 190,
@@ -63,7 +63,7 @@ class _Set_destinationState extends State<Set_destination> {
                     style: ElevatedButton.styleFrom(primary: Colors.cyan),
                   ),
                 ),
-                SizedBox(width: 25),
+                SizedBox(width: 22),
                 SizedBox(
                   width: 190,
                   height: 100,
