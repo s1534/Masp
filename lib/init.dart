@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/material.dart';
 import 'package:testmasp/setting.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
@@ -45,39 +44,41 @@ class _MyHomePageState extends State<MyHomePage> {
       backgroundColor: Color.fromARGB(255, 255, 255, 255),
       body: GestureDetector(
         behavior: HitTestBehavior.opaque,
-        child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Padding(
-                padding: const EdgeInsets.fromLTRB(0, 100, 0, 0),
-                child: Container(
-                  child: Padding(
-                    padding: const EdgeInsets.fromLTRB(15.0, 0, 0, 0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [],
+        child: SingleChildScrollView(
+          child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 100, 0, 0),
+                  child: Container(
+                    child: Padding(
+                      padding: const EdgeInsets.fromLTRB(15.0, 0, 0, 0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [],
+                      ),
                     ),
                   ),
                 ),
-              ),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(0, 50, 0, 0),
-                child: Container(
-                  width: 230,
-                  height: 230,
-                  child: (Image.asset('assets/images/masp.png')),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 50, 0, 0),
+                  child: Container(
+                    width: 230,
+                    height: 230,
+                    child: (Image.asset('assets/images/masp.png')),
+                  ),
                 ),
-              ),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(0, 100, 0, 0),
-                child: Container(
-                  child: Text('Tap to Start',
-                      style: TextStyle(
-                          color: Color.fromARGB(255, 106, 103, 103),
-                          fontSize: 30)),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 100, 0, 0),
+                  child: Container(
+                    child: Text('Tap to Start',
+                        style: TextStyle(
+                            color: Color.fromARGB(255, 106, 103, 103),
+                            fontSize: 30)),
+                  ),
                 ),
-              ),
-            ]),
+              ]),
+        ),
         onTap: () => {
           Navigator.of(context).push(MaterialPageRoute(builder: (context) {
             return SettingPage();

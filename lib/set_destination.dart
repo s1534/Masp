@@ -13,6 +13,7 @@ class Set_destination extends StatefulWidget {
 
 class _Set_destinationState extends State<Set_destination> {
   @override
+  bool flag = false;
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -27,39 +28,86 @@ class _Set_destinationState extends State<Set_destination> {
       ),
       body: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
-            ElevatedButton(
-              onPressed: () {
-                _showModalPicker(context);
-              },
-              child: const Text(
-                'どこに行く？',
-                style: TextStyle(color: Colors.white, fontSize: 20),
-              ),
-              style: ElevatedButton.styleFrom(primary: Colors.cyan[200]),
+            Padding(
+              padding: EdgeInsets.only(top: 80),
             ),
-            Text(
-              _selectedItem + 'に',
-              style: TextStyle(color: Colors.black, fontSize: 20),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => Result()),
-                );
-              },
-              child: const Text(
-                '確定する',
-                style: TextStyle(color: Colors.white, fontSize: 20),
+            Container(
+              height: 100.0,
+              width: 200.0,
+              child: Text(
+                _selectedItem,
+                style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 40,
+                    fontWeight: FontWeight.bold),
+                textAlign: TextAlign.center,
               ),
-              style: ElevatedButton.styleFrom(primary: Colors.red[200]),
+            ),
+            Expanded(child: Image.asset('assets/images/destination_trans.png')),
+            Row(
+              children: [
+                Padding(
+                  padding: EdgeInsets.only(left: 13),
+                ),
+                SizedBox(
+                  width: 190,
+                  height: 100,
+                  child: ElevatedButton(
+                    onPressed: () {
+                      _showModalPicker(context);
+                      flag = true;
+                    },
+                    child: const Text(
+                      'どこに行く？',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold),
+                    ),
+                    style: ElevatedButton.styleFrom(primary: Colors.cyan),
+                  ),
+                ),
+                SizedBox(width: 22),
+                SizedBox(
+                  width: 190,
+                  height: 100,
+                  child: ElevatedButton.icon(
+                    onPressed: !flag
+                        ? null
+                        : () {
+                            // 何かEnableの時の処理
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => Result()),
+                            );
+                          },
+                    label: Text(
+                      '確定する',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold),
+                    ),
+                    icon: Icon(Icons.directions_walk_outlined,
+                        size: 40, color: Colors.white),
+                    style: ElevatedButton.styleFrom(primary: Colors.orange),
+                  ),
+                ),
+              ],
+            ),
+            Padding(
+              padding: EdgeInsets.all(70),
             ),
           ],
         ),
       ),
     );
+  }
+
+  Map<dynamic, dynamic> get goto {
+    return {};
   }
 
   void _showModalPicker(BuildContext context) {
@@ -71,6 +119,8 @@ class _Set_destinationState extends State<Set_destination> {
           child: GestureDetector(
             onTap: () {
               Navigator.pop(context);
+              print(flag);
+              // flag = true;
             },
             child: CupertinoPicker(
               itemExtent: 40,
@@ -83,15 +133,19 @@ class _Set_destinationState extends State<Set_destination> {
     );
   }
 
-  String _selectedItem = 'none';
+  String _selectedItem = '';
 
   final List<String> _items = [
     '奈良市',
     '生駒市',
-    '奈良先端科学技術大学院大学',
-    '北陸先端科学技術大学院大学',
-    '沖縄先端科学技術大学院大学',
-    '大分市',
+    '大和高田市',
+    '大和郡山市',
+    '天理市',
+    '橿原市',
+    '桜井市',
+    '五條市',
+    '御所市',
+    '香芝市',
   ];
 
   Widget _pickerItem(String str) {
@@ -100,6 +154,10 @@ class _Set_destinationState extends State<Set_destination> {
       style: const TextStyle(fontSize: 20),
     );
   }
+
+  // void _goTo(bool flag) {
+  //   print(flag);
+  // }
 
   void _onSelectedItemChanged(int index) {
     setState(() {
