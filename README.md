@@ -61,7 +61,7 @@ For help getting started with Flutter, view our
 samples, guidance on mobile development, and a full API reference.
 
 # Member
-Iseda Hikoto(M1 Student of Ubiquitous Computing Lab, at Nara Institute of Science and Technology, Nara, Ikoma)
-Goto Ippei(M1 Student of Ubiquitous Computing Lab, at Nara Institute of Science and Technology, Nara, Ikoma)
-Mishima Yuki(M1 Student of Ubiquitous Computing Lab, at Nara Institute of Science and Technology, Nara, Ikoma)
+Iseda Hikoto(M1 Student of Ubiquitous Computing Lab, at Nara Institute of Science and Technology, Nara, Ikoma)  
+Goto Ippei(M1 Student of Ubiquitous Computing Lab, at Nara Institute of Science and Technology, Nara, Ikoma)  
+Mishima Yuki(M1 Student of Ubiquitous Computing Lab, at Nara Institute of Science and Technology, Nara, Ikoma)  
 http://ubi-lab.naist.jp/ja/
