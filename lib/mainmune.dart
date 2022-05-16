@@ -128,10 +128,6 @@ class _Main_manueState extends State<Main_manue> {
                     },
                   ),
                 )
-                // Navigator.of(context)
-                //     .push(MaterialPageRoute(builder: (context) {
-                //   return Set_destination();
-                // }))
               },
               child: Padding(
                 padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
