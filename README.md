@@ -27,7 +27,17 @@ We have therefore developed Masp, a user-participatory application that provides
 
 This app has two main functions: one is to allow users to vote on whether or not they think people should wear masks in their own neighborhoods, and the other is to display a graph showing what people in the places they want to visit think about masks.
 
-## Contribution
+# Masp Sysytem
+1:Users vote on whether or not they think masks should be worn in their area.
+
+2:The voting information is accumulated in the cloud to form collective knowledge.
+
+3:The UI can be operated intuitively while viewing the map.
+
+4:Users can also find out what other people living in the same area as themselves think about masks.
+
+
+# Contribution
 ・This is the basis for determining whether you should wear a mask when traveling or going out.
 
 ・This provides an opportunity to find out what people in your community think about masks.
@@ -37,7 +47,7 @@ This app has two main functions: one is to allow users to vote on whether or not
 ・This can also be used to analyze the awareness of wearing masks and the actual number of infected persons.\n
 
 
-## Getting Started
+# Getting Started
 
 This project is a starting point for a Flutter application.
 
@@ -49,3 +59,9 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter, view our
 [online documentation](https://flutter.dev/docs), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+# Member
+Iseda Hikoto(M1 Student of Ubiquitous Computing Lab, at Nara Institute of Science and Technology, Nara, Ikoma)  
+Goto Ippei(M1 Student of Ubiquitous Computing Lab, at Nara Institute of Science and Technology, Nara, Ikoma)  
+Mishima Yuki(M1 Student of Ubiquitous Computing Lab, at Nara Institute of Science and Technology, Nara, Ikoma)  
+http://ubi-lab.naist.jp/ja/
